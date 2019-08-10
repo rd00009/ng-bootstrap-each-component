@@ -11,4 +11,10 @@ Resources -
  * @Output
  * Component reference (<app-header #header></app-header>)
  
+Interpolation {{}}
+Bind property <img [src]="imgpath.src"/>
+Expression - {{2+2}}
+ 
+
+ 
 
