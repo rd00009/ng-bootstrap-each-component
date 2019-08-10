@@ -6,7 +6,7 @@ Resources -
 2. https://ng-bootstrap.github.io
 3. https://angular.io/cli
 
-3 Ways to intercommunicate of angular components-
+3 Ways to inter-component communication in angular
  * @Input 
  * @Output
  * Component reference (<app-header #header></app-header>)
