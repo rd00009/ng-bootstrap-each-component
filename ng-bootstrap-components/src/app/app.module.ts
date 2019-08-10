@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {CommonModule} from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /*third party imports*/
 import {NgxLoadingModule} from 'ngx-loading';
 import  {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,22 +16,27 @@ import { NavmenuComponent } from './navmenu/navmenu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WorkoutsApiService } from './workouts-api.service';
 import  {FormsModule} from '@angular/forms';
+import { WorkerDetailComponent } from './workouts/workouts-inner-components/worker-detail-component';
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    WorkoutsComponent,
-    EntryeditorComponent,
-    NavmenuComponent
-  ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgxLoadingModule.forRoot({}),
     FormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot()
   ],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    WorkoutsComponent,
+    EntryeditorComponent,
+    NavmenuComponent,
+    WorkerDetailComponent
+  ],  
   providers: [ WorkoutsApiService],
   bootstrap: [AppComponent]
 })

@@ -5,9 +5,10 @@ import { WorkoutsComponent } from './workouts/workouts.component';
 import { EntryeditorComponent } from './entryeditor/entryeditor.component';
 
 
-const routes: Routes = [{path:'',component:HomeComponent},
-{path:'workouts',component:WorkoutsComponent},
-{path:'workouts/:id',component:EntryeditorComponent}];
+const routes: Routes = [{ path: '',redirectTo:'/home', pathMatch:'full' },
+{ path: 'home', component: HomeComponent },
+{ path: 'events', component: WorkoutsComponent },
+{ path: 'events/:id', component: EntryeditorComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

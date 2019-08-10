@@ -23,11 +23,14 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.css",
-              "src/css/workout-bootstrap.min.css"
+            "styles": [              
+              "src/css/workout-bootstrap.min.css",              
+              "node_modules/ngx-toastr/toastr.css",
+              "src/styles.css"                       
             ],
-            "scripts": []
+            "scripts": [                                     
+                   
+            ]
           },
           "configurations": {
             "production": {

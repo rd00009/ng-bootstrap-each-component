@@ -10,17 +10,16 @@ import * as _ from 'lodash';
 })
 export class WorkoutsComponent implements OnInit {
   public workouts = [];
-  public loading = false;  
+  public loading = false;
+  eventId:'';
 
-  constructor(private api: WorkoutsApiService) { }
-
+  constructor(private workoutService:WorkoutsApiService) { }
+  events :any;
   ngOnInit() {
-  
-      // this.loading = true;
-      // this.api.getWorkouts().subscribe(data=> {
-      //     this.workouts = data;
-      //     this.loading=false;
-      // });
-  
+    this.events = this.workoutService.getWorkouts();     
   } 
+
+  renderId(id) {
+    this.eventId=id;
+   }  
 }

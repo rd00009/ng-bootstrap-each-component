@@ -1,0 +1,10 @@
+<div ngClass="" class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{event?.type | uppercase}} ({{event.id}})</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{event?.date}}</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>      
+        <button class="btn btn-link">{{event.distance}}</button>
+        <button class="btn btn-link" (click)="handleCardAction('called from child itself: ')">Another link </button>
+    </div>
+</div>

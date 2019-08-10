@@ -1,1 +1,32 @@
-<p>workouts works!</p>
+<!-- <div class="row">
+    <div class="col-md-4">
+        <workout-detail [event]='events[1]'></workout-detail>
+    </div>
+    <div class="col-md-4">       
+        <img class="ng-width" src="/assets/angularconnect-shield.png" />
+    </div>
+    <div class="col-md-4">
+        <workout-detail [event]='events[1]'></workout-detail>
+    </div>
+
+</div> -->
+<div class="row">
+    <div class="jumbotron col-md-12">
+        <h3 class="display-3">Event list</h3>
+    </div>
+</div>
+<div class="row" *ngIf="eventId==1">
+    <hr class="my-4" />
+    <div class="col-md-12">
+        <div class="alert alert-primary" role="alert">
+            Welcome to Workout Tracker ({{eventId}}) ! <button class="btn btn-sm btn-danger" [hidden]="eventId==1"
+                (click)="wrkDetailRef.handleCardAction('Called from Parent: ');">Call child!!</button>
+        </div>
+        <workout-detail [event]='events[0]' #wrkDetailRef></workout-detail>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6" *ngFor="let event of events">
+        <workout-detail [event]='event' (handleWorkerDetail)='renderId($event)'></workout-detail>
+    </div>
+</div>
