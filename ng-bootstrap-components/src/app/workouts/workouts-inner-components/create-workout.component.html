@@ -1,0 +1,112 @@
+<div class="row">
+    <div class="col-md-12">
+        <h3>Create Event using Template Forms</h3>
+        <hr />
+    </div>
+</div>
+
+<form [ngClass]="eventForm.invalid && eventForm.dirty? 'was-validated':''" #eventForm="ngForm"
+    (ngSubmit)="SaveForm(eventForm.value)" novalidate>
+    <div class="row">
+        <div class="col-md-7">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Select Perfection</label>
+                <select required (ngModel)="perfection" class="form-control" name="perfection">
+                    <option value="0">Please select</option>
+                    <option value="1">Beginner</option>
+                    <option value="2">Intermediate</option>
+                    <option value="3">Advanced</option>
+                </select>
+                <div *ngIf="eventForm.controls?.perfection?.errors?.required && eventForm.controls?.perfection?.dirty"
+                    class="invalid-feedback">
+                    Please provide a valid event perfection.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect2">Select city</label>
+                <select required (ngModel)="city" name="city" multiple class="form-control">
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                    <option>Saharanpur</option>
+                    <option>Roorkee</option>
+                    <option>Haridwar</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please provide a valid event city.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Event Name</label>
+                <input required pattern="[a-zA-Z ]*" (ngModel)="name" class="form-control" name="name"
+                    placeholder="event name">
+                <div *ngIf="eventForm.controls?.name?.errors?.required && eventForm.controls?.name?.dirty"
+                    class="invalid-feedback">
+                    Please provide a valid event name.
+                </div>
+                <div *ngIf="eventForm.controls?.name?.errors?.pattern && eventForm.controls?.name?.dirty"
+                    class="invalid-feedback">
+                    Please provide a valid pattern for event name.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Event Description</label>
+                <textarea (ngModel)="eventdescription" required name="eventdescription" class="form-control"
+                    rows="3"></textarea>
+                <div class="invalid-feedback">
+                    Please provide a valid event description.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <h4>Form status</h4>
+            <ol>
+                <li>eventForm.valid - {{eventForm?.valid}}</li>
+                <li>eventForm.invalid - {{eventForm?.invalid}}</li>
+                <li>eventForm.touched - {{eventForm?.touched}}</li>
+                <li>eventForm.untouched - {{eventForm?.untouched}}</li>
+                <li>eventForm.dirty - {{eventForm?.dirty}}</li>
+                <li>eventForm.submitted - {{eventForm?.submitted}}</li>
+                <li>eventForm.pristine - {{eventForm?.pristine }}</li>
+            </ol>
+            <hr />
+            <h4>Field status</h4>
+            <ol>
+                <li>eventForm.controls.name.valid - {{eventForm?.controls?.name?.valid}}</li>
+                <li>eventForm.controls.name.invalid - {{eventForm?.controls?.name?.invalid}}</li>
+                <li>eventForm.controls.name.touched - {{eventForm?.controls?.name?.touched}}</li>
+                <li>eventForm.controls.name.untouched - {{eventForm?.controls?.name?.untouched}}</li>
+                <li>eventForm.controls.name.dirty - {{eventForm?.controls?.name?.dirty}}</li>
+                <li>eventForm.controls.name.submitted - {{eventForm?.controls?.name?.submitted}}</li>
+                <li>eventForm.controls.name.pristine - {{eventForm?.controls?.name?.pristine }}</li>
+            </ol>
+
+            <h4>Field error status</h4>
+            <ol>
+                <li>eventForm.controls.name.errors - {{eventForm?.controls?.name?.errors | json}}</li>
+                <li>eventForm.controls.name.errors.required - {{eventForm?.controls?.name?.errors?.required | json}}</li>
+                <li>eventForm.controls.name.errors.pattern - {{eventForm?.controls?.name?.errors?.pattern | json}}</li>
+                <!-- <li>eventForm.controls.name.invalid - {{eventForm.controls.name.invalid}}</li>
+                <li>eventForm.controls.name.touched - {{eventForm.controls.name.touched}}</li>
+                <li>eventForm.controls.name.untouched - {{eventForm.controls.name.untouched}}</li>
+                <li>eventForm.controls.name.dirty - {{eventForm.controls.name.dirty}}</li>
+                <li>eventForm.controls.name.submitted - {{eventForm.controls.name.submitted}}</li>
+                <li>eventForm.controls.name.pristine - {{eventForm.controls.name.pristine}}</li> -->
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <button class="btn btn-sm btn-success" [disabled]="eventForm.invalid" name="submit"
+                    type="submit">Save</button>
+                &nbsp;
+                <button class="btn btn-sm btn-danger" (click)='CancelForm()'>Cancel</button>
+            </div>
+        </div>
+        <!-- <div *ngIf="SuccessMessage" class="form-group">
+            <div [ngClass]="IsSaved?'alert-success':'alert-danger'" class="alert" role="alert">
+                {{SuccessMessage}}
+            </div>
+        </div> -->
+    </div>
+</form>

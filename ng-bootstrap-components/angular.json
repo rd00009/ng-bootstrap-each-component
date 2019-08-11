@@ -23,13 +23,13 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [              
-              "src/css/workout-bootstrap.min.css",              
+            "styles": [
+              "src/css/workout-bootstrap.min.css",
               "node_modules/ngx-toastr/toastr.css",
-              "src/styles.css"                       
+              "src/styles.css"
             ],
-            "scripts": [                                     
-                   
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js"
             ]
           },
           "configurations": {
@@ -124,6 +124,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ng-bootstrap-components"
 }

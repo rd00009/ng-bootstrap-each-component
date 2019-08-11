@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import  {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /*third party imports*/
@@ -15,7 +16,8 @@ import { EntryeditorComponent } from './entryeditor/entryeditor.component';
 import { NavmenuComponent } from './navmenu/navmenu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WorkoutsApiService } from './workouts-api.service';
-import  {FormsModule} from '@angular/forms';
+import {CreateWorkoutComponent} from './workouts/workouts-inner-components/create-workout.component';
+
 import { WorkerDetailComponent } from './workouts/workouts-inner-components/worker-detail-component';
 @NgModule({
   imports: [
@@ -35,7 +37,8 @@ import { WorkerDetailComponent } from './workouts/workouts-inner-components/work
     WorkoutsComponent,
     EntryeditorComponent,
     NavmenuComponent,
-    WorkerDetailComponent
+    WorkerDetailComponent,
+    CreateWorkoutComponent
   ],  
   providers: [ WorkoutsApiService],
   bootstrap: [AppComponent]

@@ -4,7 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 declare let toastr
 @Component({
     selector: 'workout-detail',
-    templateUrl: './worker-detail-component.html',
+    templateUrl: './worker-detail-component.html'
 })
 export class WorkerDetailComponent {   
     @Input() event: any;
