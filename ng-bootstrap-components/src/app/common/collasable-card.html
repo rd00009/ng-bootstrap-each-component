@@ -1,0 +1,11 @@
+<div class="card">
+  <div title="Click to view details" (click)="handleToggle()" class="card-header">
+    <ng-content select="[c-title]"></ng-content>
+  </div>
+  <div *ngIf="IsBodyExpanded" style="cursor:pointer;" class="card-body">
+    <ng-content select="[c-body]"></ng-content>
+  </div>
+  <div *ngIf="IsBodyExpanded" class="card-footer">
+    <ng-content select="[c-footer]"></ng-content>
+  </div>
+</div>

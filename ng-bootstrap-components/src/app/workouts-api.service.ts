@@ -61,6 +61,12 @@ export class WorkoutsApiService {
 
 const MY_CONSTANT: any = [
   {
+    "id": 10,
+    "date": "2019-8-12",
+    "type": "Man",
+    "distance": "105"
+  },
+  {
     "id": 1,
     "date": "2018-8-4",
     "type": "bike",

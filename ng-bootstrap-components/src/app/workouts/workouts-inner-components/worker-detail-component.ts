@@ -4,11 +4,13 @@ import { ToastrService } from 'ngx-toastr';
 declare let toastr
 @Component({
     selector: 'workout-detail',
-    templateUrl: './worker-detail-component.html'
+    templateUrl: './worker-detail-component.html',
+    styles:['.btn:pointer:cursor']
 })
 export class WorkerDetailComponent {   
     @Input() event: any;
     @Output() handleWorkerDetail = new EventEmitter<string>();
+    IsBodyExpanded : boolean = false;
     constructor(private toastr: ToastrService){
 
     }
@@ -17,5 +19,9 @@ export class WorkerDetailComponent {
         //this.toastr.error(this.event.id,this.event.type);
         this.toastr.warning(calledfrom +''+this.event.id,this.event.type);
         this.handleWorkerDetail.emit(this.event.id);       
+    }
+
+    handleToggle(){
+            this.IsBodyExpanded = !this.IsBodyExpanded;
     }
 }
