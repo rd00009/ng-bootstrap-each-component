@@ -1,5 +1,5 @@
 <collasable-card>
-  <span c-title>{{ event?.type | uppercase }} ({{ event.id }}) <i class="fad fa-id-card"></i></span>
+  <span c-title>{{ event?.type | uppercase | colorpick }} ({{ event.id }}) <i class="fad fa-id-card"></i></span>
   <span c-body>
     <h5 class="card-title">{{ event?.date }}</h5>
     <h6 *ngIf="event.id==10">This is changed</h6>

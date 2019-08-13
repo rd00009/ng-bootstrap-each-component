@@ -21,7 +21,7 @@ import { CreateEventComponent } from "./workouts/workouts-inner-components/creat
 
 import { WorkerDetailComponent } from "./workouts/workouts-inner-components/worker-detail-component";
 import { CollasableCardComponent } from "./common/collasable-card";
-import { Interpolation } from "@angular/compiler";
+import { ColorPipe } from "./common/color-pipe";
 import { from } from "rxjs";
 @NgModule({
   imports: [
@@ -45,7 +45,8 @@ import { from } from "rxjs";
     WorkerDetailComponent,
     CreateWorkoutComponent,
     CreateEventComponent,
-    CollasableCardComponent
+    CollasableCardComponent,
+    ColorPipe
   ],
   providers: [WorkoutsApiService],
   bootstrap: [AppComponent]
